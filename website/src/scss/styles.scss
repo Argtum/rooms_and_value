@@ -1,0 +1,56 @@
+@import 'variables';
+@import 'room/room';
+
+@font-face
+{
+  font-family: 'PT Sans';
+  src: url("../font/PTSansRegular.ttf");
+}
+
+@font-face
+{
+  font-family: 'Noto Serif';
+  src: url("../font/NotoSerifRegular.ttf");
+}
+
+html
+{
+  height: 100%;
+}
+
+.body
+{
+  background: linear-gradient($background-gradient-start, $background-gradient-end), url("../img/background.jpg");
+}
+
+.page
+{
+  text-align: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &__title
+  {
+    font: 400 42px/1.2em 'Noto Serif';
+    color: $main-color;
+    margin-bottom: 55px;
+  }
+
+  &__content
+  {
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+
+    &_card
+    {
+      margin: 15px;
+    }
+  }
+}
