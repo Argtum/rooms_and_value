@@ -1,5 +1,4 @@
-@import 'variables';
-@import 'room/room';
+$main-color: #70563d;
 
 @font-face
 {
@@ -13,6 +12,8 @@
   src: url("../font/NotoSerifRegular.ttf");
 }
 
+@import 'room/room';
+
 html
 {
   height: 100%;
@@ -20,7 +21,7 @@ html
 
 .body
 {
-  background: linear-gradient($background-gradient-start, $background-gradient-end), url("../img/background.jpg");
+  background: linear-gradient(rgba(253, 253, 250, .4), rgba(247, 243, 236, .4)), url("../img/background.jpg");
 }
 
 .page

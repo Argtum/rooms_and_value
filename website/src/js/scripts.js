@@ -14,7 +14,7 @@ function removeClass(element, className) {
 }
 
 function addClass(element, className) {
-  element.classList.remove(className);
+  element.classList.add(className);
 }
 
 function selectRoom() {
