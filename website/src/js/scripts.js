@@ -18,22 +18,20 @@ function addClass(element, className) {
 }
 
 function selectRoom() {
-  addClass(this.parentElement, 'clicked');
-  this.parentElement.addEventListener('mouseleave', function () {
+  addClass(this.parentElement.parentElement, 'clicked');
+  this.parentElement.parentElement.addEventListener('mouseleave', function () {
     if (this.classList.contains('clicked')) {
-      this.style.filter="grayscale(100%)";
-      addClass(this, 'selected');
       removeClass(this, 'clicked');
+      addClass(this, 'selected');
     }
   });
 }
 
 function clearSelection(event) {
-  const rooms = document.getElementsByClassName('room');
+  const rooms = document.getElementsByClassName('room-card');
 
-  if (!event.target.closest('.room')) {
+  if (!event.target.closest('.room-card')) {
     for (let i = 0; i < rooms.length; i++) {
-      rooms[i].style.filter="grayscale(0)";
       removeClass(rooms[i], 'selected');
     }
   }

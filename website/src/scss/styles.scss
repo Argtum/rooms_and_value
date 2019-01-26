@@ -1,3 +1,5 @@
+@import "mixins";
+
 $main-color: #70563d;
 
 @font-face
@@ -11,8 +13,6 @@ $main-color: #70563d;
   font-family: 'Noto Serif';
   src: url("../font/NotoSerifRegular.ttf");
 }
-
-@import 'room/room';
 
 html
 {
@@ -55,3 +55,13 @@ html
     }
   }
 }
+
+.room-card
+{
+  @include rooms(#e7e0d3, 'not_selected', '', #dbdbdb, $main-color, #1e1e1e, #4b4b4b, $main-color, #775b25);
+}
+
+//.page__content .selected
+//{
+//  @include rooms(#d8d8d8, 'selected', '_gray', #d8d8d8, #909090, #a3a3a3, #909090, #909090, #bcbcbc);
+//}

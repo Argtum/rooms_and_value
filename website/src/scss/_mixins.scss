@@ -1,0 +1,135 @@
+@mixin rooms($main_border, $is_selected, $picture_name, $vertical_line, $name, $description, $cost, $value, $bottom)
+{
+  .room
+  {
+    max-width: 370px;
+    width: 100%;
+    text-align: center;
+    background-color: #fff;
+    padding-bottom: 50px;
+    border: 5px solid $main_border;
+    box-sizing: border-box;
+    position: relative;
+
+    &__photo
+    {
+      margin: -5px;
+      width: 370px;
+      height: 230px;
+
+      &_one
+      {
+        @extend .room__photo;
+        background: url("../img/room1" + $picture_name + ".jpg") no-repeat 0 0;
+      }
+
+      &_two
+      {
+        @extend .room__photo;
+        background: url("../img/room2" + $picture_name + ".jpg") no-repeat 0 0;
+      }
+
+      &_three
+      {
+        @extend .room__photo;
+        background: url("../img/room3" + $picture_name + ".jpg") no-repeat 0 0;
+      }
+    }
+
+    &__motivator
+    {
+      display: none;
+      position: absolute;
+      margin: 5px;
+    }
+
+    &__data
+    {
+      margin: 20px 30px 0;
+      border-bottom: 1px solid $vertical_line;
+      height: 155px;
+
+      &_name
+      {
+        margin-top: 25px;
+        height: 55px;
+        font: 400 28px/1.2em 'Noto Serif';
+        color: $name;
+      }
+
+      &_description
+      {
+        font: 400 16px/24px 'PT Sans';
+        color: $description;
+        letter-spacing: -.011em;
+      }
+    }
+
+    &__cost
+    {
+      font: 400 18px/18px 'Noto Serif';
+      color: $cost;
+      margin: 30px auto 28px;
+
+      &_value
+      {
+        font-size: 25px;
+        color: $value;
+        letter-spacing: .03em;
+      }
+    }
+
+    &__button
+    {
+      width: 230px;
+      height: 50px;
+      background-color: $bottom;
+      color: #fff;
+      font: 400 16px/24px 'PT Sans';
+      cursor: pointer;
+      border: none;
+      outline: none;
+      letter-spacing: .09em;
+    }
+
+    //@if $is_selected != 'selected'
+    //{
+    //  &:hover
+    //  {
+    //    border-color: #fff;
+    //
+    //    .room__motivator
+    //    {
+    //      display: block;
+    //    }
+    //  }
+    //
+    //  &__button:hover
+    //  {
+    //    background-color: #9e8555;
+    //  }
+    //}
+
+    .room-card:not(.selected)
+    {
+      .room
+      {
+        &:hover
+        {
+          border-color: #fff;
+
+          .room__motivator
+          {
+            display: block;
+          }
+        }
+
+        &__button:hover
+        {
+          background-color: #9e8555;
+        }
+      }
+    }
+  }
+}
+
